@@ -11,3 +11,6 @@
  Frontend:
  1. Navigate to `frontend` folder and run `npm install`.
  2. After installation run `npm start`.
+ 
+ EXTRA:
+ Use `https://codesandbox.io/` to build sandbox.
