@@ -4,7 +4,7 @@
  - Frontend: React
  
  Backend:
- 1. Install MongoDB on your local machine.
+ 1. Install MongoDB on your local machine if you dont want to use current setup from MongoDB Atlas.
  2. Navigate to `backend` folder and run `npm install`.
  3. After install run `npm start`.
  
