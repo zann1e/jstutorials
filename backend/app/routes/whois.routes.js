@@ -3,6 +3,9 @@ module.exports = app => {
 
     let router = require("express").Router();
 
+    // Get all whois records
+    router.get("/", whois.findAll);
+
     // Retrieve a whois record
     router.get("/:id", whois.get);
 
