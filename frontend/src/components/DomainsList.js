@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import WhoisDataService from "../services/whois.services";
+import { Link } from "react-router-dom";
 
 export default class DomainsList extends Component {
     constructor(props) {
@@ -39,8 +40,10 @@ export default class DomainsList extends Component {
                     <ul className="list-group">
                         {domains &&
                         domains.map((domain, index) => (
-                            <li className="list-group-item" key={index}>
-                                {domain.domain}
+                            <li className="list-group-item"
+                                key={index}
+                            >
+                                <Link to={`/whois/${domain.domain}`}>{domain.domain}</Link>
                             </li>
                         ))}
                     </ul>

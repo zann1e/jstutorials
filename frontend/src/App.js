@@ -34,11 +34,6 @@ class App extends Component {
                                     Domains
                                 </Link>
                             </li>
-                            <li className="nav-item">
-                                <Link to={"/whois"} className="nav-link">
-                                    Whois
-                                </Link>
-                            </li>
                         </div>
                     </nav>
 
