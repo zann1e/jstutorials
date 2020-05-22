@@ -1,9 +1,10 @@
-let whois = require('whois');
+const whois = require('whois');
 const db = require("../models");
 const Domain = db.domains;
 
 exports.get = (req, res) => Domain.exists({domain: req.params.id}, function (err, data) {
 
+    console.log(data);
     if (data) {
         Domain.findOne({domain: req.params.id})
             .then(data => {
@@ -16,8 +17,7 @@ exports.get = (req, res) => Domain.exists({domain: req.params.id}, function (err
                 });
             });
     }
-
-    if (err) {
+    else {
         // Create a Tutorial
         whois.lookup(req.params.id, function (err, data) {
             if (data) {
@@ -40,8 +40,6 @@ exports.get = (req, res) => Domain.exists({domain: req.params.id}, function (err
             }
 
         });
-
-
     }
 
 });

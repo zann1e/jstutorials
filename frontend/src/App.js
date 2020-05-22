@@ -6,6 +6,7 @@ import "./App.css";
 import AddTutorial from "./components/AddTutorial";
 import Tutorial from "./components/Tutorial";
 import TutorialsList from "./components/TutorialsList";
+import DomainsList from "./components/DomainsList";
 import Whois from "./components/Whois";
 
 class App extends Component {
@@ -29,6 +30,11 @@ class App extends Component {
                                 </Link>
                             </li>
                             <li className="nav-item">
+                                <Link to={"/domains"} className="nav-link">
+                                    Domains
+                                </Link>
+                            </li>
+                            <li className="nav-item">
                                 <Link to={"/whois"} className="nav-link">
                                     Whois
                                 </Link>
@@ -42,6 +48,7 @@ class App extends Component {
                             <Route exact path="/add" component={AddTutorial} />
                             <Route path="/tutorials/:id" component={Tutorial} />
                             <Route path="/whois/:id" component={Whois} />
+                            <Route path="/domains" component={DomainsList} />
                         </Switch>
                     </div>
                 </div>
