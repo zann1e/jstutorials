@@ -35,15 +35,15 @@ export default class DomainsList extends Component {
 
         return (
             <div className="list row">
-                <div className="col-md-6">
+                <div className="col-md-8">
                     <h4>Domains</h4>
-                    <ul className="list-group">
+                    <ul className="list-group list-index-domains">
                         {domains &&
                         domains.map((domain, index) => (
                             <li className="list-group-item"
                                 key={index}
                             >
-                                <Link to={`/whois/${domain.domain}`}>{domain.domain}</Link>
+                                <Link to={`/domain/${domain.domain}`}>{domain.domain}</Link>
                             </li>
                         ))}
                     </ul>
