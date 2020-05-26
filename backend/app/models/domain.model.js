@@ -3,6 +3,7 @@ module.exports = mongoose => {
         {
             domain: { type : String , unique : true, required : true, dropDups: true, lowercase: true, trim: true },
             whois: String,
+            meta: Object,
         },
         { timestamps: true }
     );

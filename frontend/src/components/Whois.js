@@ -10,12 +10,11 @@ export default class Whois extends Component {
 
         this.state = {
             domain: this.props.match.params.id,
-            currentWhois: {}
+            data: {},
+            meta: {},
         };
-    }
-
-    componentDidMount() {
-        this.searchWhois(this.state.domain);
+        this.searchWhois();
+        document.title = this.state.domain + " review";
     }
 
     searchWhois(domain) {
@@ -23,9 +22,9 @@ export default class Whois extends Component {
         WhoisDataService.get(search)
             .then(response => {
                 this.setState({
-                    currentWhois: response.data
+                    data: response.data,
+                    meta: response.data.meta,
                 });
-                console.log(response.data);
             })
             .catch(e => {
                 console.log(e);
@@ -38,6 +37,7 @@ export default class Whois extends Component {
             pathname: `/whois/${this.state.domain}`
         });
         this.searchWhois();
+        document.title = this.state.domain + " review";
     }
 
     onChangeDomain(e) {
@@ -49,7 +49,6 @@ export default class Whois extends Component {
     }
 
     render() {
-        const { currentWhois } = this.state;
         return (
             <div className="list row">
                 <div className="col-md-8">
@@ -72,11 +71,12 @@ export default class Whois extends Component {
                     </div>
                 </div>
                 <div className="col-md-12">
-                    <h1>{currentWhois.domain}</h1>
+                    <h1>{this.state.data.domain}</h1>
+                    <h1>{this.state.meta.title}</h1>
                     <pre>
-                      {currentWhois.whois}
+                      {this.state.data.whois}
                     </pre>
-                    <span>{currentWhois.updatedAt}</span>
+                    <span>{this.state.data.createdAt}</span>
                 </div>
             </div>
             )
