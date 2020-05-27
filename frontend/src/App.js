@@ -11,7 +11,7 @@ class App extends Component {
             <Router>
                 <div>
                     <nav className="navbar navbar-expand navbar-dark bg-dark">
-                        <a href="/domains" className="navbar-brand">
+                        <a href="/" className="navbar-brand">
                             WebTul
                         </a>
                         <div className="navbar-nav mr-auto">

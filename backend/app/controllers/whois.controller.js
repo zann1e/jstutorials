@@ -53,7 +53,7 @@ exports.get = (req, res) => Domain.exists({domain: req.params.id}, function (err
 
 exports.findAll = (req, res) => {
 
-    Domain.find().limit(20)
+    Domain.find().limit(20).sort({createdAt:-1})
         .then(data => {
             res.send(data);
         })

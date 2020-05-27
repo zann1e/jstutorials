@@ -52,3 +52,8 @@
   max-width: 300px;
   margin: auto;
 }
+
+a.custom-card,
+a.custom-card:hover {
+  color: inherit;
+}

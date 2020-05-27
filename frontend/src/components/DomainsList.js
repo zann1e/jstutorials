@@ -34,19 +34,24 @@ export default class DomainsList extends Component {
         const { domains } = this.state;
 
         return (
-            <div className="list row">
-                <div className="col-md-8">
+            <div className="row">
+                <div className="col-md-12">
                     <h4>Domains</h4>
-                    <ul className="list-group list-index-domains">
+                    <div className="card-columns">
                         {domains &&
                         domains.map((domain, index) => (
-                            <li className="list-group-item"
-                                key={index}
-                            >
-                                <Link to={`/domain/${domain.domain}`}>{domain.domain}</Link>
-                            </li>
+                            <a href={`/domain/${domain.domain}`} className="custom-card">
+                            <div className="card">
+                                <img className="card-img-top" src={domain.meta.image}  />
+                                <div className="card-body">
+                                    <h5 className="card-title">{domain.domain}</h5>
+                                </div>
+                            </div>
+                            </a>
                         ))}
-                    </ul>
+                     </div>
+
+
                 </div>
             </div>
         );
