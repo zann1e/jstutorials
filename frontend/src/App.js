@@ -12,7 +12,7 @@ class App extends Component {
                 <div>
                     <nav className="navbar navbar-expand navbar-dark bg-dark">
                         <a href="/" className="navbar-brand">
-                            WebTul
+                            Prodakht
                         </a>
                         <div className="navbar-nav mr-auto">
                         </div>
@@ -26,7 +26,7 @@ class App extends Component {
                     </div>
                     <footer className="page-footer font-small blue">
                         <div className="footer-copyright text-center py-3">© {new Date().getFullYear()} Copyright:
-                            <a href={window.location.origin}> WebTul.com</a>
+                            <a href={window.location.origin}>Prodakht.com</a>
                         </div>
                     </footer>
                 </div>
